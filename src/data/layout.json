@@ -1,0 +1,80 @@
+
+{
+  "header": {
+    "logo": "Your Name",
+    "navigation": [
+      {
+        "label": "Home",
+        "path": "/"
+      },
+      {
+        "label": "About",
+        "path": "/about"
+      },
+      {
+        "label": "Projects",
+        "path": "/projects"
+      },
+      {
+        "label": "Contact",
+        "path": "/contact"
+      }
+    ]
+  },
+  "hero": {
+    "title": "Welcome to My Portfolio",
+    "subtitle": "Software Developer & Designer",
+    "image": "/images/hero-image.jpg"
+  },
+  "sections": {
+    "about": {
+      "title": "About Me",
+      "content": "A brief description about yourself and your expertise",
+      "skills": [
+        "Web Development",
+        "UI/UX Design",
+        "Mobile Development",
+        "Cloud Computing"
+      ]
+    },
+    "projects": {
+      "title": "Featured Projects",
+      "items": [
+        {
+          "title": "Project 1",
+          "description": "Description of project 1",
+          "image": "/images/project1.jpg",
+          "link": "/projects/1"
+        },
+        {
+          "title": "Project 2",
+          "description": "Description of project 2",
+          "image": "/images/project2.jpg",
+          "link": "/projects/2"
+        }
+      ]
+    },
+    "contact": {
+      "title": "Get in Touch",
+      "email": "your.email@example.com",
+      "social": {
+        "github": "https://github.com/yourusername",
+        "linkedin": "https://linkedin.com/in/yourusername",
+        "twitter": "https://twitter.com/yourusername"
+      }
+    }
+  },
+  "footer": {
+    "copyright": "© 2024 Your Name. All rights reserved.",
+    "links": [
+      {
+        "label": "Privacy Policy",
+        "path": "/privacy"
+      },
+      {
+        "label": "Terms of Service",
+        "path": "/terms"
+      }
+    ]
+  }
+}
