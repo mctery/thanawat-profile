@@ -7,13 +7,18 @@ export default function Home() {
         <h1 className="text-4xl font-bold">thanawat.fun</h1>
         <p className="mt-1 text-sm">This is my personal blog.</p>
       </div>
-      <Image
-        src="/assets/profile.jpg"
-        width={300}
-        height={300}
-        alt="Profile Picture"
-        style={{ borderRadius: "50%" }}
-      />
+      <div className="flex items-center justify-center">
+        <div className="aero-image-profile">
+          <Image
+            src="/assets/profile.jpg"
+            width={300}
+            height={300}
+            alt="Profile Picture"
+            className="rounded-full"
+          />
+        </div>
+      </div>
+      <button className="aero-button hover:brightness-110 transition-all duration-300">ตรงใจสุด ๆ</button>
       <div className=""></div>
     </main>
   );

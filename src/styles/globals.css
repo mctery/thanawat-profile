@@ -1,12 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #f0d2aa;
+  --background: linear-gradient(to bottom, #cbeeff, #e6f5ff); /* watery bg */
+  --foreground: #2a4d66; /* sky text */
+
+  --glass-bg: rgba(255, 255, 255, 0.25); /* grass bg */
+  --glass-blur: blur(8px);
+  --glass-opacity: 0.6;
+  --glass-tranform: translateY(-25%) rotate(-5deg) scale(1.4);
+  --highlight: rgba(255, 255, 255, 0.6); /* fake reflection */
 }
 
 @theme inline {
-  --color-background: var(--background);
+  /* --color-background: var(--background); */
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
@@ -14,13 +20,74 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #556a80;
-    --foreground: #e4bf8f;
+    --background: linear-gradient(to bottom, #1e2e3d, #3f5b73); /* ocean night */
+    --foreground: #f0e6d2;
+
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --highlight: rgba(255, 255, 255, 0.3);
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+  backdrop-filter: var(--glass-blur);
+}
+
+/* aero button style */
+.aero-button {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  border-radius: 0.8rem;
+  padding: 0.6rem 1.2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: var(--foreground);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;  
+}
+
+.aero-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 50%;
+  width: 100%;
+  background: var(--highlight);
+  transform: var(--glass-tranform);
+  opacity: var(--glass-opacity);
+  pointer-events: none;
+}
+.aero-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* aero image */
+.aero-image-profile {
+  width: 300px;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: var(--glass-blur);
+}
+.aero-image-profile::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 50%;
+  width: 100%;
+  background: var(--highlight);
+  transform: var(--glass-tranform);
+  opacity: var(--glass-opacity);
+  pointer-events: none;
 }
