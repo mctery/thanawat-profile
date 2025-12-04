@@ -1,15 +1,10 @@
 import type { Metadata } from "next";
-import { Noto_Sans } from "next/font/google";
 import "@/styles/globals.css";
-
-const notoSans = Noto_Sans({
-  variable: "--font-noto-sans",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Thanawat dot Fun",
-  description: "This is my personal blog.",
+  description: "Personal Portfolio - Full Stack Developer",
+  keywords: ["developer", "portfolio", "full stack", "react", "nextjs"],
 };
 
 export default function RootLayout({
@@ -18,8 +13,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="th" className={`${notoSans.variable}`}>
-       <body>
+    <html lang="th">
+      <body>
         {children}
       </body>
     </html>
