@@ -139,11 +139,14 @@ export default function Home() {
 
   return (
     <main className="min-h-screen">
-      {/* Floating Orbs Background */}
-      <div className="floating-orbs">
-        <div className="orb orb-1"></div>
-        <div className="orb orb-2"></div>
-        <div className="orb orb-3"></div>
+      {/* PS3 XMB Wave Background */}
+      <div className="ps3-waves-container">
+        <div className="ps3-stars"></div>
+        <div className="ps3-wave ps3-wave-4"></div>
+        <div className="ps3-wave ps3-wave-1"></div>
+        <div className="ps3-wave ps3-wave-2"></div>
+        <div className="ps3-wave ps3-wave-3"></div>
+        <div className="ps3-wave-glow"></div>
       </div>
 
       {/* Navigation */}
@@ -336,7 +339,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="liquid-footer">
-        <p>© 2025 {profileData.name} — สร้างด้วย Next.js & React Spring</p>
+        <p>© 2025 {profileData.name} — Inspired by PlayStation 3 XMB</p>
       </footer>
     </main>
   );
