@@ -4,82 +4,75 @@ import Image from "next/image";
 import { useSpring, animated } from "@react-spring/web";
 import { useInView } from "react-intersection-observer";
 
-// Mock Profile Data
+// Profile Data from GitHub: https://github.com/mctery
 const profileData = {
-  name: "ธนวัฒน์ สุขใจดี",
-  nameEn: "Thanawat Sukjaidee",
-  title: "Full Stack Developer",
-  tagline: "สร้างสรรค์ประสบการณ์ดิจิทัลที่น่าจดจำ",
-  email: "thanawat@example.com",
-  phone: "+66 98 765 4321",
-  location: "กรุงเทพมหานคร, ประเทศไทย",
-  github: "github.com/thanawat",
-  linkedin: "linkedin.com/in/thanawat",
-  bio: "นักพัฒนาซอฟต์แวร์ที่หลงใหลในการสร้างเว็บแอปพลิเคชันที่สวยงามและใช้งานง่าย มีประสบการณ์กว่า 5 ปีในการพัฒนา Full Stack ชอบเรียนรู้เทคโนโลยีใหม่ๆ และแบ่งปันความรู้กับชุมชนนักพัฒนา",
+  name: "ธนวัฒน์ เลิศลำยอง",
+  nameEn: "Thanawat Lerdlumyong",
+  title: "Web Developer & Blockchain Enthusiast",
+  tagline: "สนใจใน Blockchain และ Cryptocurrency พร้อมเรียนรู้สิ่งใหม่ๆ",
+  email: "mctery@outlook.com",
+  phone: "",
+  location: "ประเทศไทย",
+  github: "github.com/mctery",
+  linkedin: "linkedin.com/in/mctery",
+  bio: "สวัสดีครับ! ผมเป็นนักพัฒนาที่หลงใหลใน Blockchain และ Cryptocurrency กำลังเรียนรู้ JavaScript และการพัฒนา Web3 ชอบสร้างโปรเจกต์ใหม่ๆ และเรียนรู้เทคโนโลยีที่น่าสนใจ",
 };
 
 const skills = [
-  { category: "Frontend", items: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Vue.js"] },
-  { category: "Backend", items: ["Node.js", "Python", "Go", "PostgreSQL", "MongoDB"] },
-  { category: "DevOps", items: ["Docker", "Kubernetes", "AWS", "CI/CD", "Linux"] },
-  { category: "Tools", items: ["Git", "Figma", "VS Code", "Postman", "Jira"] },
+  { category: "Frontend", items: ["JavaScript", "React", "HTML/CSS", "Material UI", "Next.js"] },
+  { category: "Blockchain", items: ["Web3.js", "Cryptocurrency", "Smart Contracts", "DeFi", "NFT"] },
+  { category: "Backend", items: ["Node.js", "REST API", "Database", "Git", "GitHub"] },
+  { category: "Learning", items: ["TypeScript", "Solidity", "Ethereum", "React Native"] },
 ];
 
 const experiences = [
   {
-    company: "TechVision Thailand",
-    position: "Senior Full Stack Developer",
-    period: "2022 - ปัจจุบัน",
-    description: "พัฒนาระบบ E-commerce ขนาดใหญ่รองรับผู้ใช้กว่า 1 ล้านคน ปรับปรุง Performance ลดเวลาโหลดลง 40%",
-    highlights: ["Lead team 5 คน", "Microservices Architecture", "AWS Infrastructure"],
+    company: "Self-Learning & Personal Projects",
+    position: "Web Developer",
+    period: "2023 - ปัจจุบัน",
+    description: "พัฒนาโปรเจกต์ส่วนตัวเพื่อเรียนรู้เทคโนโลยีใหม่ๆ โดยเฉพาะ Blockchain และ Web3 Development",
+    highlights: ["JavaScript", "React", "Blockchain"],
   },
   {
-    company: "Digital Solutions Co., Ltd.",
-    position: "Full Stack Developer",
-    period: "2020 - 2022",
-    description: "พัฒนาเว็บแอปพลิเคชันสำหรับลูกค้าองค์กร ทำงานร่วมกับทีม UX/UI ในการสร้าง Design System",
-    highlights: ["React + Node.js", "GraphQL API", "Agile/Scrum"],
-  },
-  {
-    company: "StartUp Hub",
-    position: "Junior Developer",
-    period: "2019 - 2020",
-    description: "เริ่มต้นอาชีพนักพัฒนา เรียนรู้ Best Practices และร่วมพัฒนา MVP สำหรับ Startups หลายราย",
-    highlights: ["JavaScript/TypeScript", "REST API", "MySQL"],
+    company: "GitHub Open Source",
+    position: "Contributor",
+    period: "กำลังเรียนรู้",
+    description: "ศึกษาและมีส่วนร่วมกับโปรเจกต์ Open Source บน GitHub เพื่อพัฒนาทักษะการเขียนโค้ด",
+    highlights: ["QRApp", "Dashboard Templates", "HTML/CSS"],
   },
 ];
 
 const education = [
   {
-    institution: "มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี",
-    degree: "วิศวกรรมศาสตรบัณฑิต สาขาวิศวกรรมคอมพิวเตอร์",
-    period: "2015 - 2019",
-    gpa: "3.45",
+    institution: "Self-Taught Developer",
+    degree: "เรียนรู้ด้วยตนเองผ่าน Online Courses และ Documentation",
+    period: "กำลังเรียนรู้",
+    gpa: "",
   },
 ];
 
 const projects = [
   {
-    name: "ShopSmart E-commerce",
-    description: "แพลตฟอร์ม E-commerce ครบวงจร รองรับการชำระเงินหลายช่องทาง",
-    tech: ["Next.js", "Stripe", "PostgreSQL"],
+    name: "QRApp",
+    description: "แอปพลิเคชันสร้างและอ่าน QR Code พัฒนาด้วย JavaScript",
+    tech: ["JavaScript", "HTML/CSS", "QR Code API"],
   },
   {
-    name: "TaskFlow Pro",
-    description: "แอปจัดการงานและโปรเจกต์สำหรับทีม พร้อม Real-time collaboration",
-    tech: ["React", "Socket.io", "MongoDB"],
+    name: "Material Dashboard React",
+    description: "Dashboard UI Template สำหรับ React พร้อม Material Design",
+    tech: ["React", "Material UI", "JavaScript"],
   },
   {
-    name: "HealthTrack",
-    description: "แอปติดตามสุขภาพส่วนบุคคล เชื่อมต่อกับ Wearable devices",
-    tech: ["React Native", "Firebase", "HealthKit"],
+    name: "Paper Dashboard React",
+    description: "Dashboard Template ที่สวยงามสำหรับ React Applications",
+    tech: ["React", "Bootstrap", "JavaScript"],
   },
 ];
 
 const certifications = [
-  { name: "AWS Certified Solutions Architect", year: "2023" },
-  { name: "Google Professional Cloud Developer", year: "2022" },
-  { name: "Meta Frontend Developer Certificate", year: "2022" },
+  { name: "GitHub Pull Shark Badge (x2)", year: "GitHub" },
+  { name: "GitHub YOLO Badge", year: "GitHub" },
+  { name: "11 Public Repositories", year: "GitHub" },
 ];
 
 const springConfig = { tension: 120, friction: 14 };
@@ -206,12 +199,12 @@ export default function Home() {
                 <span>{profileData.location}</span>
               </div>
               <div className="detail-item">
-                <span className="detail-icon">💼</span>
-                <span>5+ ปี ประสบการณ์</span>
+                <span className="detail-icon">🔗</span>
+                <span>Blockchain Enthusiast</span>
               </div>
               <div className="detail-item">
-                <span className="detail-icon">🎓</span>
-                <span>วศ.บ. วิศวกรรมคอมพิวเตอร์</span>
+                <span className="detail-icon">📚</span>
+                <span>กำลังเรียนรู้ JavaScript & Web3</span>
               </div>
             </div>
           </div>
@@ -276,14 +269,14 @@ export default function Home() {
                 </div>
                 <div className="edu-meta">
                   <span className="edu-period">{edu.period}</span>
-                  <span className="edu-gpa">GPA: {edu.gpa}</span>
+                  {edu.gpa && <span className="edu-gpa">GPA: {edu.gpa}</span>}
                 </div>
               </div>
             </div>
           ))}
 
-          {/* Certifications */}
-          <h3 className="subsection-title">ใบรับรอง & Certificates</h3>
+          {/* GitHub Achievements */}
+          <h3 className="subsection-title">GitHub Achievements</h3>
           <div className="cert-grid">
             {certifications.map((cert, index) => (
               <div key={index} className="liquid-glass cert-card">
@@ -326,11 +319,6 @@ export default function Home() {
               <span className="contact-icon">📧</span>
               <span className="contact-label">Email</span>
               <span className="contact-value">{profileData.email}</span>
-            </a>
-            <a href={`tel:${profileData.phone}`} className="contact-item">
-              <span className="contact-icon">📱</span>
-              <span className="contact-label">Phone</span>
-              <span className="contact-value">{profileData.phone}</span>
             </a>
             <a href={`https://${profileData.github}`} target="_blank" rel="noopener noreferrer" className="contact-item">
               <span className="contact-icon">💻</span>
