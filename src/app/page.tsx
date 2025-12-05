@@ -14,7 +14,6 @@ const profileData = {
   phone: "",
   location: "ประเทศไทย",
   github: "github.com/mctery",
-  linkedin: "linkedin.com/in/mctery",
   bio: "สวัสดีครับ! ผมเป็นนักพัฒนาที่หลงใหลใน Blockchain และ Cryptocurrency กำลังเรียนรู้ JavaScript และการพัฒนา Web3 ชอบสร้างโปรเจกต์ใหม่ๆ และเรียนรู้เทคโนโลยีที่น่าสนใจ",
 };
 
@@ -327,11 +326,6 @@ export default function Home() {
               <span className="contact-icon">💻</span>
               <span className="contact-label">GitHub</span>
               <span className="contact-value">{profileData.github}</span>
-            </a>
-            <a href={`https://${profileData.linkedin}`} target="_blank" rel="noopener noreferrer" className="contact-item">
-              <span className="contact-icon">💼</span>
-              <span className="contact-label">LinkedIn</span>
-              <span className="contact-value">{profileData.linkedin}</span>
             </a>
           </div>
         </animated.div>
