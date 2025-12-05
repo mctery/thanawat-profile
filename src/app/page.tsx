@@ -6,11 +6,11 @@ import { useInView } from "react-intersection-observer";
 
 // Profile Data from GitHub: https://github.com/mctery
 const profileData = {
-  name: "ธนวัฒน์ เลิศลำยอง",
-  nameEn: "Thanawat Lerdlumyong",
+  name: "ธนวรรษ เลิศลำยอง",
+  nameEn: "Thanawat Lerdlamyong",
   title: "Web Developer & Blockchain Enthusiast",
   tagline: "สนใจใน Blockchain และ Cryptocurrency พร้อมเรียนรู้สิ่งใหม่ๆ",
-  email: "mctery@outlook.com",
+  email: "tlerdlumyong@live.com",
   phone: "",
   location: "ประเทศไทย",
   github: "github.com/mctery",
