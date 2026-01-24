@@ -6,13 +6,12 @@ import { useInView } from "react-intersection-observer";
 
 // Profile Data from GitHub: https://github.com/mctery
 const profileData = {
-  name: "ธนวรรษ เลิศลำยอง",
-  nameEn: "Thanawat Lerdlamyong",
+  name: "Thanawat Lerdlamyong",
   title: "Web Developer & Trading EA",
   tagline: "DevOps & Finding Innovative Solutions",
   email: "tlerdlumyong@live.com",
   phone: "",
-  location: "ประเทศไทย",
+  location: "Thailand",
   github: "github.com/mctery",
   bio: "Hi! I'm Thanawat. Currently, I'm a freelance developer and interested in Full-Stack Web Development, Teading EA, Ai Traning and Prompt Engineering.",
 };
@@ -27,7 +26,7 @@ const experiences = [
   {
     company: "Self-Learning & Personal Projects",
     position: "Web Developer",
-    period: "2023 - ปัจจุบัน",
+    period: "2023 - Current",
     description: "พัฒนาโปรเจกต์ส่วนตัวเพื่อเรียนรู้เทคโนโลยีใหม่ๆ โดยเฉพาะ Blockchain และ Web3 Development",
     highlights: ["JavaScript", "React", "Blockchain"],
   },
