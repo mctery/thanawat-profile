@@ -8,20 +8,19 @@ import { useInView } from "react-intersection-observer";
 const profileData = {
   name: "ธนวรรษ เลิศลำยอง",
   nameEn: "Thanawat Lerdlamyong",
-  title: "Web Developer & Blockchain Enthusiast",
-  tagline: "สนใจใน Blockchain และ Cryptocurrency พร้อมเรียนรู้สิ่งใหม่ๆ",
+  title: "Web Developer & Trading EA",
+  tagline: "DevOps & Finding Innovative Solutions",
   email: "tlerdlumyong@live.com",
   phone: "",
   location: "ประเทศไทย",
   github: "github.com/mctery",
-  bio: "สวัสดีครับ! ผมเป็นนักพัฒนาที่หลงใหลใน Blockchain และ Cryptocurrency กำลังเรียนรู้ JavaScript และการพัฒนา Web3 ชอบสร้างโปรเจกต์ใหม่ๆ และเรียนรู้เทคโนโลยีที่น่าสนใจ",
+  bio: "สวัสดีครับ! ผมชื่อธนวรรษ ปัจจุบันเป็นโปรแกรมเมอร์ตัวเล็กๆคนนึง มีความสนใจในการพัฒนาระบบ Full Stack ,Trading EA และ Promts Engineering",
 };
 
 const skills = [
-  { category: "Frontend", items: ["JavaScript", "React", "HTML/CSS", "Material UI", "Next.js"] },
-  { category: "Blockchain", items: ["Web3.js", "Cryptocurrency", "Smart Contracts", "DeFi", "NFT"] },
-  { category: "Backend", items: ["Node.js", "REST API", "Database", "Git", "GitHub"] },
-  { category: "Learning", items: ["TypeScript", "Solidity", "Ethereum", "React Native"] },
+  { category: "Frontend", items: ["JavaScript", "React", "HTML/CSS", "Material UI", "Next.js", "PHP", "Python"] },
+  { category: "Backend", items: ["Node.js", "REST API", "Database", "Git", "GitHub", "Vercel"] },
+  { category: "Learning", items: ["TypeScript", "React", "React Native", "Python", "Android", "ios"] },
 ];
 
 const experiences = [
