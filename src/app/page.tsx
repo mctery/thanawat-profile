@@ -1,138 +1,26 @@
 "use client";
 
 import Image from "next/image";
-import { useSpring, animated } from "@react-spring/web";
-import { useInView } from "react-intersection-observer";
-
-// Profile Data from GitHub: https://github.com/mctery
-const profileData = {
-  name: "Thanawat Lerdlamyong",
-  title: "Web Developer & Trading EA",
-  tagline: "DevOps & Finding Innovative Solutions",
-  email: "tlerdlumyong@live.com",
-  phone: "",
-  location: "Thailand",
-  github: "github.com/mctery",
-  bio: "Hi! I'm Thanawat. Currently, I'm a freelance developer and interested in Full-Stack Web Development, Teading EA, Ai Traning and Prompt Engineering.",
-};
-
-const skills = [
-  { category: "Frontend", items: ["JavaScript", "React", "HTML/CSS", "Material UI", "Next.js", "PHP", "Python"] },
-  { category: "Backend", items: ["Node.js", "REST API", "Database", "Git", "GitHub", "Vercel"] },
-  { category: "Learning", items: ["TypeScript", "React", "React Native", "Python", "Android", "ios"] },
-];
-
-const experiences = [
-  {
-    company: "Self-Learning & Personal Projects",
-    position: "Web Developer",
-    period: "2023 - Current",
-    description: "พัฒนาโปรเจกต์ส่วนตัวเพื่อเรียนรู้เทคโนโลยีใหม่ๆ โดยเฉพาะ Blockchain และ Web3 Development",
-    highlights: ["JavaScript", "React", "Blockchain"],
-  },
-  {
-    company: "GitHub Open Source",
-    position: "Contributor",
-    period: "กำลังเรียนรู้",
-    description: "ศึกษาและมีส่วนร่วมกับโปรเจกต์ Open Source บน GitHub เพื่อพัฒนาทักษะการเขียนโค้ด",
-    highlights: ["QRApp", "Dashboard Templates", "HTML/CSS"],
-  },
-];
-
-const education = [
-  {
-    institution: "Self-Taught Developer",
-    degree: "เรียนรู้ด้วยตนเองผ่าน Online Courses และ Documentation",
-    period: "กำลังเรียนรู้",
-    gpa: "",
-  },
-];
-
-const projects = [
-  {
-    name: "QRApp",
-    description: "แอปพลิเคชันสร้างและอ่าน QR Code พัฒนาด้วย JavaScript",
-    tech: ["JavaScript", "HTML/CSS", "QR Code API"],
-  },
-  {
-    name: "Material Dashboard React",
-    description: "Dashboard UI Template สำหรับ React พร้อม Material Design",
-    tech: ["React", "Material UI", "JavaScript"],
-  },
-  {
-    name: "Paper Dashboard React",
-    description: "Dashboard Template ที่สวยงามสำหรับ React Applications",
-    tech: ["React", "Bootstrap", "JavaScript"],
-  },
-];
-
-const certifications = [
-  { name: "GitHub Pull Shark Badge (x2)", year: "GitHub" },
-  { name: "GitHub YOLO Badge", year: "GitHub" },
-  { name: "11 Public Repositories", year: "GitHub" },
-];
-
-const springConfig = { tension: 120, friction: 14 };
+import { animated } from "@react-spring/web";
+import { useAnimatedSection } from "@/hooks/useAnimatedSection";
+import {
+  profileData,
+  navLinks,
+  skills,
+  experiences,
+  education,
+  projects,
+  certifications,
+} from "@/data/profile";
 
 export default function Home() {
-  // Individual refs for each section
-  const [heroRef, heroInView] = useInView({ triggerOnce: true, threshold: 0.1 });
-  const [aboutRef, aboutInView] = useInView({ triggerOnce: true, threshold: 0.1 });
-  const [skillsRef, skillsInView] = useInView({ triggerOnce: true, threshold: 0.1 });
-  const [expRef, expInView] = useInView({ triggerOnce: true, threshold: 0.1 });
-  const [eduRef, eduInView] = useInView({ triggerOnce: true, threshold: 0.1 });
-  const [projectsRef, projectsInView] = useInView({ triggerOnce: true, threshold: 0.1 });
-  const [contactRef, contactInView] = useInView({ triggerOnce: true, threshold: 0.1 });
-
-  // Spring animations for each section
-  const heroSpring = useSpring({
-    from: { y: 60, opacity: 0 },
-    to: { y: heroInView ? 0 : 60, opacity: heroInView ? 1 : 0 },
-    config: springConfig,
-    delay: 0,
-  });
-
-  const aboutSpring = useSpring({
-    from: { y: 60, opacity: 0 },
-    to: { y: aboutInView ? 0 : 60, opacity: aboutInView ? 1 : 0 },
-    config: springConfig,
-    delay: 100,
-  });
-
-  const skillsSpring = useSpring({
-    from: { y: 60, opacity: 0 },
-    to: { y: skillsInView ? 0 : 60, opacity: skillsInView ? 1 : 0 },
-    config: springConfig,
-    delay: 100,
-  });
-
-  const expSpring = useSpring({
-    from: { y: 60, opacity: 0 },
-    to: { y: expInView ? 0 : 60, opacity: expInView ? 1 : 0 },
-    config: springConfig,
-    delay: 100,
-  });
-
-  const eduSpring = useSpring({
-    from: { y: 60, opacity: 0 },
-    to: { y: eduInView ? 0 : 60, opacity: eduInView ? 1 : 0 },
-    config: springConfig,
-    delay: 100,
-  });
-
-  const projectsSpring = useSpring({
-    from: { y: 60, opacity: 0 },
-    to: { y: projectsInView ? 0 : 60, opacity: projectsInView ? 1 : 0 },
-    config: springConfig,
-    delay: 100,
-  });
-
-  const contactSpring = useSpring({
-    from: { y: 60, opacity: 0 },
-    to: { y: contactInView ? 0 : 60, opacity: contactInView ? 1 : 0 },
-    config: springConfig,
-    delay: 100,
-  });
+  const hero = useAnimatedSection(0);
+  const about = useAnimatedSection();
+  const skillsSection = useAnimatedSection();
+  const exp = useAnimatedSection();
+  const edu = useAnimatedSection();
+  const projectsSection = useAnimatedSection();
+  const contact = useAnimatedSection();
 
   return (
     <main className="min-h-screen">
@@ -151,18 +39,18 @@ export default function Home() {
         <div className="nav-container">
           <div className="nav-logo">Thanawat.fun</div>
           <div className="nav-links">
-            <a href="#about" className="nav-link">About me</a>
-            <a href="#skills" className="nav-link">Skills and Abilities</a>
-            <a href="#experience" className="nav-link">Work Experience</a>
-            <a href="#projects" className="nav-link">Workings</a>
-            <a href="#contact" className="nav-link">Contact me</a>
+            {navLinks.map((link) => (
+              <a key={link.href} href={link.href} className="nav-link">
+                {link.label}
+              </a>
+            ))}
           </div>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section id="hero" className="hero-section" ref={heroRef}>
-        <animated.div className="hero-content" style={heroSpring}>
+      <section id="hero" className="hero-section" ref={hero.ref}>
+        <animated.div className="hero-content" style={hero.style}>
           <div className="hero-text">
             <p className="hero-greeting">About me</p>
             <h1 className="hero-name">{profileData.name}</h1>
@@ -188,9 +76,9 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="section" ref={aboutRef}>
-        <animated.div className="liquid-glass section-card" style={aboutSpring}>
-          <h2 className="section-title">เกี่ยวกับผม</h2>
+      <section id="about" className="section" ref={about.ref}>
+        <animated.div className="liquid-glass section-card" style={about.style}>
+          <h2 className="section-title">About Me</h2>
           <div className="about-content">
             <p className="about-bio">{profileData.bio}</p>
             <div className="about-details">
@@ -200,7 +88,7 @@ export default function Home() {
               </div>
               <div className="detail-item">
                 <span className="detail-icon">🔗</span>
-                <span>Dev and Teadings</span>
+                <span>Dev and Trading</span>
               </div>
               <div className="detail-item">
                 <span className="detail-icon">📚</span>
@@ -212,8 +100,8 @@ export default function Home() {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="section" ref={skillsRef}>
-        <animated.div style={skillsSpring}>
+      <section id="skills" className="section" ref={skillsSection.ref}>
+        <animated.div style={skillsSection.style}>
           <h2 className="section-title">Skills and Abilities</h2>
           <div className="skills-grid">
             {skills.map((skillGroup, index) => (
@@ -231,22 +119,22 @@ export default function Home() {
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="section" ref={expRef}>
-        <animated.div style={expSpring}>
+      <section id="experience" className="section" ref={exp.ref}>
+        <animated.div style={exp.style}>
           <h2 className="section-title">Work Experience</h2>
           <div className="timeline">
-            {experiences.map((exp, index) => (
+            {experiences.map((experience, index) => (
               <div key={index} className="liquid-glass timeline-item">
                 <div className="timeline-header">
                   <div>
-                    <h3 className="timeline-company">{exp.company}</h3>
-                    <p className="timeline-position">{exp.position}</p>
+                    <h3 className="timeline-company">{experience.company}</h3>
+                    <p className="timeline-position">{experience.position}</p>
                   </div>
-                  <span className="timeline-period">{exp.period}</span>
+                  <span className="timeline-period">{experience.period}</span>
                 </div>
-                <p className="timeline-description">{exp.description}</p>
+                <p className="timeline-description">{experience.description}</p>
                 <div className="timeline-highlights">
-                  {exp.highlights.map((highlight, hIndex) => (
+                  {experience.highlights.map((highlight, hIndex) => (
                     <span key={hIndex} className="highlight-tag">{highlight}</span>
                   ))}
                 </div>
@@ -257,19 +145,19 @@ export default function Home() {
       </section>
 
       {/* Education Section */}
-      <section id="education" className="section" ref={eduRef}>
-        <animated.div style={eduSpring}>
+      <section id="education" className="section" ref={edu.ref}>
+        <animated.div style={edu.style}>
           <h2 className="section-title">Education</h2>
-          {education.map((edu, index) => (
+          {education.map((eduItem, index) => (
             <div key={index} className="liquid-glass edu-card">
               <div className="edu-header">
                 <div>
-                  <h3 className="edu-institution">{edu.institution}</h3>
-                  <p className="edu-degree">{edu.degree}</p>
+                  <h3 className="edu-institution">{eduItem.institution}</h3>
+                  <p className="edu-degree">{eduItem.degree}</p>
                 </div>
                 <div className="edu-meta">
-                  <span className="edu-period">{edu.period}</span>
-                  {edu.gpa && <span className="edu-gpa">GPA: {edu.gpa}</span>}
+                  <span className="edu-period">{eduItem.period}</span>
+                  {eduItem.gpa && <span className="edu-gpa">GPA: {eduItem.gpa}</span>}
                 </div>
               </div>
             </div>
@@ -290,8 +178,8 @@ export default function Home() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="section" ref={projectsRef}>
-        <animated.div style={projectsSpring}>
+      <section id="projects" className="section" ref={projectsSection.ref}>
+        <animated.div style={projectsSection.style}>
           <h2 className="section-title">Workings</h2>
           <div className="projects-grid">
             {projects.map((project, index) => (
@@ -310,8 +198,8 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="section" ref={contactRef}>
-        <animated.div className="liquid-glass contact-card" style={contactSpring}>
+      <section id="contact" className="section" ref={contact.ref}>
+        <animated.div className="liquid-glass contact-card" style={contact.style}>
           <h2 className="section-title">Contact me</h2>
           <p className="contact-intro">by email or github</p>
           <div className="contact-grid">
