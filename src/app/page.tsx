@@ -14,7 +14,7 @@ const profileData = {
   phone: "",
   location: "ประเทศไทย",
   github: "github.com/mctery",
-  bio: "สวัสดีครับ! ผมชื่อธนวรรษ ปัจจุบันเป็นโปรแกรมเมอร์ตัวเล็กๆคนนึง มีความสนใจในการพัฒนาระบบ Full Stack ,Trading EA และ Promts Engineering",
+  bio: "Hi! I'm Thanawat. Currently, I'm a freelance developer and interested in Full-Stack Web Development, Teading EA, Ai Traning and Prompt Engineering.",
 };
 
 const skills = [
@@ -152,11 +152,11 @@ export default function Home() {
         <div className="nav-container">
           <div className="nav-logo">Thanawat.fun</div>
           <div className="nav-links">
-            <a href="#about" className="nav-link">เกี่ยวกับ</a>
-            <a href="#skills" className="nav-link">ทักษะ</a>
-            <a href="#experience" className="nav-link">ประสบการณ์</a>
-            <a href="#projects" className="nav-link">ผลงาน</a>
-            <a href="#contact" className="nav-link">ติดต่อ</a>
+            <a href="#about" className="nav-link">About me</a>
+            <a href="#skills" className="nav-link">Skills and Abilities</a>
+            <a href="#experience" className="nav-link">Work Experience</a>
+            <a href="#projects" className="nav-link">Workings</a>
+            <a href="#contact" className="nav-link">Contact me</a>
           </div>
         </div>
       </nav>
@@ -165,13 +165,13 @@ export default function Home() {
       <section id="hero" className="hero-section" ref={heroRef}>
         <animated.div className="hero-content" style={heroSpring}>
           <div className="hero-text">
-            <p className="hero-greeting">สวัสดี, ผมชื่อ</p>
+            <p className="hero-greeting">About me</p>
             <h1 className="hero-name">{profileData.name}</h1>
             <h2 className="hero-title">{profileData.title}</h2>
             <p className="hero-tagline">{profileData.tagline}</p>
             <div className="hero-buttons">
-              <a href="#contact" className="liquid-button primary">ติดต่อผม</a>
-              <a href="#projects" className="liquid-button secondary">ดูผลงาน</a>
+              <a href="#contact" className="liquid-button primary">Contact me</a>
+              <a href="#projects" className="liquid-button secondary">My works</a>
             </div>
           </div>
           <div className="hero-image-container">
@@ -201,11 +201,11 @@ export default function Home() {
               </div>
               <div className="detail-item">
                 <span className="detail-icon">🔗</span>
-                <span>Blockchain Enthusiast</span>
+                <span>Dev and Teadings</span>
               </div>
               <div className="detail-item">
                 <span className="detail-icon">📚</span>
-                <span>กำลังเรียนรู้ JavaScript & Web3</span>
+                <span>Learn about Investing, Money Management, Trading and AI</span>
               </div>
             </div>
           </div>
@@ -215,7 +215,7 @@ export default function Home() {
       {/* Skills Section */}
       <section id="skills" className="section" ref={skillsRef}>
         <animated.div style={skillsSpring}>
-          <h2 className="section-title">ทักษะความสามารถ</h2>
+          <h2 className="section-title">Skills and Abilities</h2>
           <div className="skills-grid">
             {skills.map((skillGroup, index) => (
               <div key={index} className="liquid-glass skill-card">
@@ -234,7 +234,7 @@ export default function Home() {
       {/* Experience Section */}
       <section id="experience" className="section" ref={expRef}>
         <animated.div style={expSpring}>
-          <h2 className="section-title">ประสบการณ์ทำงาน</h2>
+          <h2 className="section-title">Work Experience</h2>
           <div className="timeline">
             {experiences.map((exp, index) => (
               <div key={index} className="liquid-glass timeline-item">
@@ -260,7 +260,7 @@ export default function Home() {
       {/* Education Section */}
       <section id="education" className="section" ref={eduRef}>
         <animated.div style={eduSpring}>
-          <h2 className="section-title">การศึกษา</h2>
+          <h2 className="section-title">Education</h2>
           {education.map((edu, index) => (
             <div key={index} className="liquid-glass edu-card">
               <div className="edu-header">
@@ -293,7 +293,7 @@ export default function Home() {
       {/* Projects Section */}
       <section id="projects" className="section" ref={projectsRef}>
         <animated.div style={projectsSpring}>
-          <h2 className="section-title">ผลงานที่น่าสนใจ</h2>
+          <h2 className="section-title">Workings</h2>
           <div className="projects-grid">
             {projects.map((project, index) => (
               <div key={index} className="liquid-glass project-card">
@@ -313,8 +313,8 @@ export default function Home() {
       {/* Contact Section */}
       <section id="contact" className="section" ref={contactRef}>
         <animated.div className="liquid-glass contact-card" style={contactSpring}>
-          <h2 className="section-title">ติดต่อผม</h2>
-          <p className="contact-intro">สนใจร่วมงานหรือมีโปรเจกต์อยากปรึกษา? ติดต่อผมได้เลยครับ!</p>
+          <h2 className="section-title">Contact me</h2>
+          <p className="contact-intro">by email or github</p>
           <div className="contact-grid">
             <a href={`mailto:${profileData.email}`} className="contact-item">
               <span className="contact-icon">📧</span>
